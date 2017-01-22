@@ -1,5 +1,85 @@
-git status
-git add
-git commit
-git push
-git pull
+dir = untuk melihat file dan folder apa saja yang ada di dalam current directory skrg
+
+git clone "link github" = mendownload semua file dan folder berdasarkan repository dari link github kemudian dimasukan ke dalam komputer (masuk ke directory repository skrg)
+
+git status = untuk memberikan status, perbedaan dari repository yg sedang dikerjakan dengan repository yg ada pada link github saat clone
+
+	untracked file = artinya ada file baru
+	changes to be comitted = perubahan yang akan dicomitt
+	modifed file =  ada file yg diubah
+
+git add "mama file" = untuk menambahkan file baru ke repository yg di komputer
+	git add . = add semua yg ada di directory
+	git add -A = add all
+
+git commit -m "pesan" = mengunci ke repository, tp msh blm di sync dgn github
+
+jika gk pake parameter pesan, nanti bisa keluar enter banyak, nanti di paling atas langsung ketik isi pensannya terus pencet enter terus esc + ketik wq
+
+git push = mengupload repository yg sudah diperbarui ke github
+
+git pull = mendownload dari repository github (code ini hanya jalan ketika kita berada dalam directory repository github yg benar )
+
+git = untuk melihat kegunaan semua command
+
+
+pencet ESC + ketik "wq" = jika nyasar ke pesan aneh
+
+Step
+menuju current directory dari repository
+1. git clone dari github (untuk prtama kali) / git pull
+2. perbarui repository
+3. git add
+4. git commit
+5. git push
+6. git pull
+
+
+
+
+ketika ada 2 org atau lebih push repository yg sama dengan isi yg berbeda, maka akan muncul conflict saat git pull
+
+
+-------------------------------------PULL REQUEST, Branching, Merging-------------------------------------------
+
+git branch = untuk melihat semua branch yg ada di repository
+
+git branch "nama branch" = untuk membuat branch dari posisi branch kita ketika mengetik git branch(nama branch sesuai dgn parameter) 
+
+git checkout "nama branch" = untuk pindah ke branch sesuai dgn parameter
+
+git merge "nama branch(master)" = to take all the changes and update to master and it's try to merge them back to feature1(branch yg baru dibuat)
+	bisa terjadi conflict
+
++++ BRANCH &&  PULL REQUEST ++++
+step
+1. git pull dr master
+2. git branch
+3. git branch "nama branch"
+4. git checkout "nama branch"
+5. lakukan perbaruan pada repository
+6. git add -A
+7. git commit -m "pesan"
+
+
+8. kembali ke master branch pake git checkout "nama branch"
+9. git pull (untuk memastikan bahwa master tidak ada yg berubah)
+10. kembali ke branch yg akan dibuat pull requestnya
+11. git merge "nama master"
+12. perbaiki conflict jika ada
+13. git status
+14. git add -A
+15. git commit
+16. git push (copas)
+17. create pull request di github
+18. merge di github
+
+request feature
+make a branch for it
+code it
+commit it
+merge to master
+push
+make a pull request
+pull request reviewed
+get merged
